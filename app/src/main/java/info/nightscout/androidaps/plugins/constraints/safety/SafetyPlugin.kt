@@ -104,11 +104,11 @@ class SafetyPlugin @Inject constructor(
         return value
     }
 
-    override fun isAdvancedFilteringEnabled(value: Constraint<Boolean>): Constraint<Boolean> {
+/*    override fun isAdvancedFilteringEnabled(value: Constraint<Boolean>): Constraint<Boolean> {
         val bgSource = activePlugin.activeBgSource
         if (!bgSource.advancedFilteringSupported()) value.set(aapsLogger, true, rh.gs(R.string.smbalwaysdisabled), this)
         return value
-    }
+    }*/
 
     override fun applyBasalConstraints(absoluteRate: Constraint<Double>, profile: Profile): Constraint<Double> {
         absoluteRate.setIfGreater(aapsLogger, 0.0, rh.gs(R.string.limitingbasalratio, 0.0, rh.gs(R.string.itmustbepositivevalue)), this)
